@@ -46,5 +46,48 @@ INSERT INTO vendedores VALUES (
     "Atende a grande são paulo (SP, Guarulhos e Osasco)!"
 );
 
+INSERT INTO vendedores VALUES (
+    "Melissa da Silva Rocha",
+    1,
+    "Foto14png",
+    25.0,
+    "RJ",
+    "Atende a Grande Rio"
+);
+
+INSERT INTO vendedores VALUES (
+    "Albert Varadi",
+    0,
+    "Foto15png",
+    80.0,
+    "SC",
+    "Atende a Grande Florianópolis"
+);
+
 // mostrar todos os valores dentro da tabela vendedores
 SELECT * FROM vendedores;
+
+// Colocando o índice na tabela
+ALTER TABLE vendedores ADD COLUMN codigo int FIRST;
+
+// Alterando o índice da row com o nome da coluna
+UPDATE vendedores SET codigo=1 WHERE nome="Gustavo Varadi";
+
+UPDATE vendedores SET codigo=2 WHERE nome="Melissa da Silva Rocha";
+
+// Deletando a coluna codigo
+ALTER TABLE vendedores DROP COLUMN codigo;
+
+// Adicionando o ID
+ALTER TABLE vendedores ADD COLUMN codigo int AUTO_INCREMENT FIRST, ADD PRIMARY KEY(codigo);
+
+INSERT INTO vendedores VALUES (
+    0,
+    "Giovanna Victoria Varadi",
+    0,
+    "Foto16png",
+    19.0,
+    "SP",
+    "Atende a Grande Florida"
+);
+
